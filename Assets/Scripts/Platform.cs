@@ -8,7 +8,7 @@ public class Platform : MonoBehaviour
     public float multi_factor = 2;
     public int time = 0;
     public virtual void plus(bool vertical){
-        if(vertical)
+        if(!vertical)
         {
             transform.localScale = new Vector3(transform.localScale.x + plus_factor, transform.localScale.y, transform.localScale.z);
         }
