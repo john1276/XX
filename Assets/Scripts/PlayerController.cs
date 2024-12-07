@@ -42,6 +42,10 @@ public class PlayerController : MonoBehaviour
         {
             jumpRequest = true; // 標記跳躍請求
         }
+        //如果按下z/x，觸發對應加或乘，並會在按下方向鍵後，確定移動方向
+        //但就算長按也只會觸發一次
+        //GameManager.instance.plus();
+
     }
     private void FixedUpdate()
     {
