@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SerializableDictionary.Scripts;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+    public int cur_level = 0;
     public LevelManager levelManager = null;
     void Start()
     {
@@ -13,7 +15,7 @@ public class GameManager : MonoBehaviour
             GameManager.instance = this;
         }
         else{
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
     }
@@ -50,5 +52,12 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
+
+    public void loadNextLevel(){
+        SceneManager.LoadScene(++cur_level);
+    }
+
+    public void levelReload(){
+        SceneManager.LoadScene(cur_level);
+    }
 }
