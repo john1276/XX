@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -95,7 +95,297 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: charactor_skill_add_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      physicsShape:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7712edf865bd4b746bf86ebaa3901818
+      internalID: 1488316281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charactor_skill_add_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      physicsShape:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56a5e2819798444eb727a45800deb81
+      internalID: -370479155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charactor_skill_add_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      physicsShape:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f2e13199bebb244b1e70ea12a1f4ef
+      internalID: -1380128148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charactor_skill_add_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      physicsShape:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7f34bdc7e79e047b0f0f1ff86a4ad0
+      internalID: -1641429832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charactor_skill_add_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      physicsShape:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa654d22c63d414d9214d26df3243ee
+      internalID: 1437248966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charactor_skill_add_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      physicsShape:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3e5d5be8b091541ac47c8d85368316
+      internalID: 642374999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charactor_skill_add_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      physicsShape:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e28e58456ff8da4da6a810c2db727c7
+      internalID: -1836048382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charactor_skill_add_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      physicsShape:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497d2646a9edaa3409f26f9875705226
+      internalID: -1498319287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charactor_skill_add_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      physicsShape:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a14761691632d4f968ad4f033e24ce
+      internalID: -1373586398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: charactor_skill_add_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      physicsShape:
+      - - {x: 0, y: -24}
+        - {x: 24, y: 0}
+        - {x: 0, y: 24}
+        - {x: -24, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6ba453231e6554eafd50a27da094ab
+      internalID: -2123154951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +396,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      charactor_skill_add_0: 1488316281
+      charactor_skill_add_1: -370479155
+      charactor_skill_add_2: -1380128148
+      charactor_skill_add_3: -1641429832
+      charactor_skill_add_4: 1437248966
+      charactor_skill_add_5: 642374999
+      charactor_skill_add_6: -1836048382
+      charactor_skill_add_7: -1498319287
+      charactor_skill_add_8: -1373586398
+      charactor_skill_add_9: -2123154951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
