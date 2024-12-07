@@ -29,18 +29,18 @@ public class GameManager : MonoBehaviour
         timer += Time.deltaTime;
     }
 
-    public void plus(int num){
+    public void plus(int num, bool vertical){
         if (plat_dict.ContainsKey(num)){
             foreach (Platform plat in plat_dict.Get(num)){
-                plat.plus();
+                plat.plus(vertical);
             }
         }
     }
 
-    public void multi(int num){
+    public void multi(int num, bool vertical){
         if (plat_dict.ContainsKey(num)){
             foreach (Platform plat in plat_dict.Get(num)){
-                plat.multi();
+                plat.multi(vertical);
             }
         }
     }

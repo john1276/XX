@@ -16,7 +16,7 @@ public class Platform : MonoBehaviour
         {
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y * plus_factor, transform.localScale.z);
         }
-}
+    }
 
     public virtual void multi(bool vertical){
         if (vertical)
