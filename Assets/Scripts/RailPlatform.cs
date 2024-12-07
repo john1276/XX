@@ -10,14 +10,8 @@ public class RailPlatform : Platform
     public GameObject rail;
 
     public override void plus(bool vertical){
-        if(vertical)
-        {
-            rail.transform.localScale = new Vector3(transform.localScale.x * plus_factor, transform.localScale.y, transform.localScale.z);
-        }
-        else
-        {
-            rail.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y * plus_factor, transform.localScale.z);
-        }
+        rail.transform.localScale = new Vector3(transform.localScale.x * plus_factor, transform.localScale.y, transform.localScale.z);
+        //rail.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y * plus_factor, transform.localScale.z);
     }
     public override void multi(bool vertical){
         speed *= multi_factor;
