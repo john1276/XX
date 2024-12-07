@@ -6,7 +6,7 @@ using SerializableDictionary.Scripts;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    public SerializableDictionary<int, List<Platform>> plat_dict;
+    public LevelManager levelManager = null;
     void Start()
     {
         if (GameManager.instance == null){
@@ -30,16 +30,22 @@ public class GameManager : MonoBehaviour
     }
 
     public void plus(int num, bool vertical){
-        if (plat_dict.ContainsKey(num)){
-            foreach (Platform plat in plat_dict.Get(num)){
+        if (levelManager == null){
+            Debug.LogError("level manager missing.");
+        }
+        if (levelManager.plat_dict.ContainsKey(num)){
+            foreach (Platform plat in levelManager.plat_dict.Get(num)){
                 plat.plus(vertical);
             }
         }
     }
 
     public void multi(int num, bool vertical){
-        if (plat_dict.ContainsKey(num)){
-            foreach (Platform plat in plat_dict.Get(num)){
+        if (levelManager == null){
+            Debug.LogError("level manager missing.");
+        }
+        if (levelManager.plat_dict.ContainsKey(num)){
+            foreach (Platform plat in levelManager.plat_dict.Get(num)){
                 plat.multi(vertical);
             }
         }
