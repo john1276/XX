@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public int cur_level = 0;
     public LevelManager levelManager = null;
-    void Start()
+    void Awake()
     {
         if (GameManager.instance == null){
             GameManager.instance = this;
