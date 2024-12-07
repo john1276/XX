@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>(); // 獲取剛體
     }
 
+    bool press_plus = false;
+    bool press_multi = false;
+    public int counter = 1;
+
     private void Update()
     {
         // 左右移動
@@ -45,6 +50,36 @@ public class PlayerController : MonoBehaviour
         //如果按下z/x，觸發對應加或乘，並會在按下方向鍵後，確定移動方向
         //但就算長按也只會觸發一次
         //GameManager.instance.plus();
+        if (press_multi){
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)){
+                GameManager.instance.multi(counter++, true);
+                press_multi = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)){
+                GameManager.instance.multi(counter++, false);
+                press_multi = false;
+            }
+        }
+        else if(press_plus){
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)){
+                GameManager.instance.plus(counter++, true);
+                press_plus = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)){
+                GameManager.instance.plus(counter++, false);
+                press_plus = false;
+            }
+        }
+        if (!Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.RightArrow) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.D)){
+            if (Input.GetKeyDown(KeyCode.Z)){
+                print("press z");
+                press_plus = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.X)){
+                print("press x");
+                press_multi = true;
+            }
+        }
 
     }
     private void FixedUpdate()
