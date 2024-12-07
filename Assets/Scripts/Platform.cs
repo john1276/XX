@@ -21,11 +21,11 @@ public class Platform : MonoBehaviour
     public virtual void multi(bool vertical){
         if (vertical)
         {
-            transform.localScale = new Vector3(transform.localScale.x / multi_factor, transform.localScale.y * multi_factor, transform.localScale.z);
+            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y * multi_factor, transform.localScale.z);
         }
         else
         {
-            transform.localScale = new Vector3(transform.localScale.x * multi_factor, transform.localScale.y / multi_factor, transform.localScale.z);
+            transform.localScale = new Vector3(transform.localScale.x * multi_factor, transform.localScale.y, transform.localScale.z);
         }
         }
 }
