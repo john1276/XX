@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     float m_CoyoteTime; // coyote time 的剩餘時間
     Animator animator;
     private int animationState = 0;
-    //animator.SetInteger("State", 1);
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>(); // 獲取剛體
@@ -32,7 +31,12 @@ public class PlayerController : MonoBehaviour
     bool press_plus = false;
     bool press_multi = false;
     public int counter = 1;
+    public GameObject X, P;
+    public Camera mainCamera;      // 主相機
+    public float objectSpacing = 1f; // 生成物件之間的水平間隔
+    public int objectsPerRow = 5;   // 每行生成的物件數量
 
+    private List<GameObject> spawnedObjects = new List<GameObject>();
     private void Update()
     {
         // 左右移動
@@ -76,12 +80,13 @@ public class PlayerController : MonoBehaviour
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
                     animationState = 6;
+                    SpawnObjectsAtPosition(X);
                 }
                 else
                 {
                     animationState = 10;
                 }
-                StartCoroutine(PlayAnimationForDuration(animationState, 3f));
+                //StartCoroutine(PlayAnimationForDuration(animationState, 3f));
                 GameManager.instance.multi(counter++, true);
                 press_multi = false;
             }
@@ -89,12 +94,13 @@ public class PlayerController : MonoBehaviour
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
                         animationState = 6;
+                        SpawnObjectsAtPosition(X);
                 }
                 else
                 {
                         animationState = 10;
                 }
-                StartCoroutine(PlayAnimationForDuration(animationState, 3f));
+                //StartCoroutine(PlayAnimationForDuration(animationState, 3f));
                 GameManager.instance.multi(counter++, false);
                 press_multi = false;
             }
@@ -105,6 +111,7 @@ public class PlayerController : MonoBehaviour
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
                     animationState = 8;
+                    SpawnObjectsAtPosition(P);
                 }
                 else
                 {
@@ -119,12 +126,13 @@ public class PlayerController : MonoBehaviour
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
                     animationState = 8;
+                    SpawnObjectsAtPosition(P);
                 }
                 else
                 {
                     animationState = 10;
                 }
-                StartCoroutine(PlayAnimationForDuration(animationState, 3f));
+                //StartCoroutine(PlayAnimationForDuration(animationState, 3f));
                 GameManager.instance.plus(counter++, false);
                 press_plus = false;
             }
@@ -170,5 +178,27 @@ public class PlayerController : MonoBehaviour
     // 暫停指定的時間
     yield return new WaitForSeconds(duration);
     animator.SetInteger("State", state);
+    }
+    public void SpawnObjectsAtPosition(GameObject objectPrefab)
+    {
+        // 獲取屏幕邊界
+        Vector3 screenPosition;
+        screenPosition = new Vector3(0, Screen.height, 0); // 左上角
+        
+        // 將屏幕坐標轉換為世界坐標
+        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
+        worldPosition.z = 0; // 確保生成物件在2D層
+
+        // 根據行數和列數生成物件
+
+        // 計算當前物件的生成位置
+        Vector3 spawnPosition = worldPosition + new Vector3(spawnedObjects.Count * objectSpacing + 1, -1, 0);
+
+        // 生成物件並設置為相機的子物件
+        GameObject newObject = Instantiate(objectPrefab, spawnPosition, Quaternion.identity, mainCamera.transform);
+        //newObject.transform.localScale = Vector3.one;
+        newObject.transform.localScale = new Vector3(1f/1.23198f, 1f/0.40629f, 1f);
+        // 添加到生成物件列表
+        spawnedObjects.Add(newObject);
     }
 }
