@@ -52,22 +52,18 @@ public class PlayerController : MonoBehaviour
             m_CoyoteTime -= Time.deltaTime; // 如果沒有站在地面上就開始倒數
         }
         //移動動畫
+
         if (isGrounded) {
-            if (moveInput > 0) {
+            if (moveInput != 0) {
                 animationState = 2;
-            } else if (moveInput < 0) {
-                animationState = 3;
             } else {
                 animationState = rb.velocity.x >= 0 ? 0 : 1;
             }
         } else {
-            if (moveInput > 0) {
+            if (moveInput != 0) {
                 animationState = 4;
-            } else if (moveInput < 0) {
-                animationState = 5;
             }
         }
-
         // 跳躍
         if (Input.GetKeyDown(KeyCode.Space) && m_CoyoteTime > 0)
         {
@@ -76,15 +72,20 @@ public class PlayerController : MonoBehaviour
         //如果按下z/x，觸發對應加或乘，並會在按下方向鍵後，確定移動方向
         //但就算長按也只會觸發一次
         if (press_multi){
-            
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)){
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
-                    animationState = rb.velocity.x >= 0 ? 6 : 7;
+                    if(rb.velocity.x>0)
+                    {
+                        animationState = 6;
+                    }
                 }
                 else
                 {
-                    animationState = rb.velocity.x >= 0 ? 10 : 11;
+                    if(rb.velocity.x>0)
+                    {
+                        animationState = 10;
+                    }
                 }
                 animator.SetInteger("State", animationState);
                 GameManager.instance.multi(counter++, true);
@@ -93,45 +94,66 @@ public class PlayerController : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)){
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
-                    animationState = rb.velocity.x >= 0 ? 6 : 7;
+                    if(rb.velocity.x>0)
+                    {
+                        animationState = 6;
+                    }
                 }
                 else
                 {
-                    animationState = rb.velocity.x >= 0 ? 10 : 11;
+                    if(rb.velocity.x>0)
+                    {
+                        animationState = 10;
+                    }
                 }
-                
                 animator.SetInteger("State", animationState);
+                //這裡要envoke
                 GameManager.instance.multi(counter++, false);
                 press_multi = false;
             }
-            Debug.Log(animationState);
+            //Debug.Log(animationState);
         }
         else if(press_plus){
             
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)){
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
-                    animationState = rb.velocity.x >= 0 ? 8 : 9;
+                    if(rb.velocity.x>0)
+                    {
+                        animationState = 8;
+                    }
                 }
                 else
                 {
-                    animationState = rb.velocity.x >= 0 ? 10 : 11;
+                    if(rb.velocity.x>0)
+                    {
+                        animationState = 10;
+                    }
                 }
                 GameManager.instance.plus(counter++, true);
+                
                 press_plus = false;
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)){
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
-                    animationState = rb.velocity.x >= 0 ? 8 : 9;
+                    if(rb.velocity.x>0)
+                    {
+                        animationState = 8;
+                    }
                 }
                 else
                 {
-                    animationState = rb.velocity.x >= 0 ? 10 : 11;
+                    if(rb.velocity.x>0)
+                    {
+                        animationState = 10;
+                    }
                 }
                 GameManager.instance.plus(counter++, false);
                 press_plus = false;
             }
+            animator.SetInteger("State", animationState);
+            //envoke之類的
         }
         if (!Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.RightArrow) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.D)){
             if (Input.GetKeyDown(KeyCode.Z)){
