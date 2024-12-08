@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Platform : MonoBehaviour
 {
@@ -10,22 +11,22 @@ public class Platform : MonoBehaviour
     public virtual void plus(bool vertical){
         if(!vertical)
         {
-            transform.localScale = new Vector3(transform.localScale.x + plus_factor, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(transform.localScale.x + plus_factor, Math.Max(transform.localScale.y - plus_factor, 0.1f), transform.localScale.z);
         }
         else
         {
-            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + plus_factor, transform.localScale.z);
+            transform.localScale = new Vector3(Math.Max(transform.localScale.x - plus_factor, 0.1f), transform.localScale.y + plus_factor, transform.localScale.z);
         }
     }
 
     public virtual void multi(bool vertical){
         if (vertical)
         {
-            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y * multi_factor, transform.localScale.z);
+            transform.localScale = new Vector3(transform.localScale.x / multi_factor, transform.localScale.y * multi_factor, transform.localScale.z);
         }
         else
         {
-            transform.localScale = new Vector3(transform.localScale.x * multi_factor, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(transform.localScale.x * multi_factor, transform.localScale.y / multi_factor, transform.localScale.z);
         }
         }
 }

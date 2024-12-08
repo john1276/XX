@@ -12,7 +12,7 @@ public class FinishTrigger : MonoBehaviour
         {
             Debug.Log("到達終點！");
             // 執行結束遊戲或切換關卡的邏輯
-            //GameManager.Instance.LevelComplete(); 
+            GameManager.instance.loadNextLevel(); 
         }
     }
 }
