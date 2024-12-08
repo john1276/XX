@@ -106,11 +106,11 @@ public class PlayerController : MonoBehaviour
                         animationState = 10;
                     }
                 }
-                animator.SetInteger("State", animationState);
-                //這裡要envoke
                 GameManager.instance.multi(counter++, false);
                 press_multi = false;
             }
+            StartCoroutine(PlayAnimationForDuration(animationState, 3f));
+            //這裡要envoke
             //Debug.Log(animationState);
         }
         else if(press_plus){
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.plus(counter++, false);
                 press_plus = false;
             }
-            animator.SetInteger("State", animationState);
+            StartCoroutine(PlayAnimationForDuration(animationState, 3f));
             //envoke之類的
         }
         if (!Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.RightArrow) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.D)){
@@ -187,5 +187,13 @@ public class PlayerController : MonoBehaviour
         // 在編輯器中顯示地面檢測範圍
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
+    private IEnumerator PlayAnimationForDuration(int state, float duration)
+    {
+    // 設置動畫狀態
+    animator.SetInteger("State", state);
+
+    // 暫停指定的時間
+    yield return new WaitForSeconds(duration);
     }
 }
