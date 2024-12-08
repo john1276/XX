@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plus_factor: 2
   multi_factor: 2
+  time: 0
 --- !u!50 &-9032933823519746006
 Rigidbody2D:
   serializedVersion: 4
@@ -117,7 +118,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712f1c1a86b34e41850902774f538dc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

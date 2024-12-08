@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plus_factor: 2
   multi_factor: 1.5
+  time: 0
   speed: 0
   startPoint: {fileID: 3560400524907097021}
   endPoint: {fileID: 7540180237550793229}
@@ -122,7 +123,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6712f1c1a86b34e41850902774f538dc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

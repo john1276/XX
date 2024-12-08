@@ -54,6 +54,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void loadNextLevel(){
+        print(Application.levelCount);
+        if (cur_level > Application.levelCount){
+            cur_level = 1;
+        }
         SceneManager.LoadScene(++cur_level);
     }
 
