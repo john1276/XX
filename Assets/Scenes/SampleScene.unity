@@ -208,11 +208,11 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.6547985, y: -0.14220124, z: -10}
+  m_LocalPosition: {x: 0.79379845, y: -0.59120125, z: -10}
   m_LocalScale: {x: 1.2319822, y: 0.40628928, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1486929560}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &583028608
 GameObject:
@@ -716,7 +716,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1489197913}
-  - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1486929561
@@ -734,6 +733,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 7.5
   groundCheck: {fileID: 1489197913}
+  spriteTransform: {fileID: 1486929560}
   groundCheckRadius: 0.5
   groundCheckDistance: 0.5
   groundLayer:
@@ -750,7 +750,7 @@ Animator:
   m_GameObject: {fileID: 1486929556}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ddf58a009b1b8124fbdb3ecdee2b2537, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0738960bc52ef2242887cb1f4d5fef47, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1136,6 +1136,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 583028610}
+  - {fileID: 519420032}
   - {fileID: 1486929560}
   - {fileID: 2145193177}
   - {fileID: 731386058}
