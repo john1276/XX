@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
                 {
                     animationState = rb.velocity.x >= 0 ? 10 : 11;
                 }
+                animator.SetInteger("State", animationState);
                 GameManager.instance.multi(counter++, true);
                 press_multi = false;
             }
@@ -98,9 +99,12 @@ public class PlayerController : MonoBehaviour
                 {
                     animationState = rb.velocity.x >= 0 ? 10 : 11;
                 }
+                
+                animator.SetInteger("State", animationState);
                 GameManager.instance.multi(counter++, false);
                 press_multi = false;
             }
+            Debug.Log(animationState);
         }
         else if(press_plus){
             
