@@ -19,10 +19,12 @@ public class PlayerController : MonoBehaviour
     private bool jumpRequest;
     const float Tolerance = 0.05f;//離地跳躍
     float m_CoyoteTime; // coyote time 的剩餘時間
-
+    Animator animator;
+    //animator.SetInteger("State", 1);
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>(); // 獲取剛體
+        animator = GetComponent<Animator>();
     }
 
     bool press_plus = false;
