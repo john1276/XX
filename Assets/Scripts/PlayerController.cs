@@ -111,7 +111,6 @@ public class PlayerController : MonoBehaviour
             }
             StartCoroutine(PlayAnimationForDuration(animationState, 3f));
             //這裡要envoke
-            //Debug.Log(animationState);
         }
         else if(press_plus){
             
@@ -152,7 +151,7 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.plus(counter++, false);
                 press_plus = false;
             }
-            StartCoroutine(PlayAnimationForDuration(animationState, 3f));
+            StartCoroutine(PlayAnimationForDuration(animationState, 30f));
             //envoke之類的
         }
         if (!Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.RightArrow) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.D)){
@@ -192,7 +191,6 @@ public class PlayerController : MonoBehaviour
     {
     // 設置動畫狀態
     animator.SetInteger("State", state);
-
     // 暫停指定的時間
     yield return new WaitForSeconds(duration);
     }
