@@ -75,60 +75,42 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)){
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
-                    if(rb.velocity.x>0)
-                    {
-                        animationState = 6;
-                    }
+                    animationState = 6;
                 }
                 else
                 {
-                    if(rb.velocity.x>0)
-                    {
-                        animationState = 10;
-                    }
+                    animationState = 10;
                 }
-                animator.SetInteger("State", animationState);
+                StartCoroutine(PlayAnimationForDuration(animationState, 3f));
                 GameManager.instance.multi(counter++, true);
                 press_multi = false;
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)){
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
-                    if(rb.velocity.x>0)
-                    {
                         animationState = 6;
-                    }
                 }
                 else
                 {
-                    if(rb.velocity.x>0)
-                    {
                         animationState = 10;
-                    }
                 }
+                StartCoroutine(PlayAnimationForDuration(animationState, 3f));
                 GameManager.instance.multi(counter++, false);
                 press_multi = false;
             }
-            StartCoroutine(PlayAnimationForDuration(animationState, 3f));
-            //這裡要envoke
         }
         else if(press_plus){
             
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)){
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
-                    if(rb.velocity.x>0)
-                    {
-                        animationState = 8;
-                    }
+                    animationState = 8;
                 }
                 else
                 {
-                    if(rb.velocity.x>0)
-                    {
-                        animationState = 10;
-                    }
+                    animationState = 10;
                 }
+                StartCoroutine(PlayAnimationForDuration(animationState, 3f));
                 GameManager.instance.plus(counter++, true);
                 
                 press_plus = false;
@@ -136,23 +118,17 @@ public class PlayerController : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)){
                 if(GameManager.instance.levelManager.plat_dict.ContainsKey(counter))
                 {
-                    if(rb.velocity.x>0)
-                    {
-                        animationState = 8;
-                    }
+                    animationState = 8;
                 }
                 else
                 {
-                    if(rb.velocity.x>0)
-                    {
-                        animationState = 10;
-                    }
+                    animationState = 10;
                 }
+                StartCoroutine(PlayAnimationForDuration(animationState, 3f));
                 GameManager.instance.plus(counter++, false);
                 press_plus = false;
             }
-            StartCoroutine(PlayAnimationForDuration(animationState, 30f));
-            //envoke之類的
+            
         }
         if (!Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.LeftArrow) && !Input.GetKeyDown(KeyCode.RightArrow) && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.D)){
             if (Input.GetKeyDown(KeyCode.Z)){
@@ -190,8 +166,9 @@ public class PlayerController : MonoBehaviour
     private IEnumerator PlayAnimationForDuration(int state, float duration)
     {
     // 設置動畫狀態
-    animator.SetInteger("State", state);
+    Debug.Log(state);
     // 暫停指定的時間
     yield return new WaitForSeconds(duration);
+    animator.SetInteger("State", state);
     }
 }
