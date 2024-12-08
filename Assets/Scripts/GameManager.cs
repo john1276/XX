@@ -64,4 +64,8 @@ public class GameManager : MonoBehaviour
     public void levelReload(){
         SceneManager.LoadScene(cur_level);
     }
+
+    public void timeOut(){
+        print("time out");
+    }
 }
